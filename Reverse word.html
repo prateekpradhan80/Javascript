@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1 id="demo"></h1>
+    <script>
+        function reverseWords(sentence) {
+ 
+  var words = sentence.split(" ");
+
+  
+  for (var i = 0; i < words.length; i++) {
+    words[i] = reverseWord(words[i]);
+  }
+ 
+  var reversedSentence = words.join(" ");
+  return reversedSentence;
+}
+
+function reverseWord(word) {
+  var reversedWord = "";
+  for (var i = word.length - 1; i >= 0; i--) {
+    reversedWord += word[i];
+  }
+  return reversedWord;
+}
+
+ 
+var inputSentence = prompt("Enter a sentence:");
+ 
+var reversedSentence = reverseWords(inputSentence);
+ 
+console.log("Reversed sentence: " + reversedSentence);
+document.getElementById("demo").innerHTML= reversedSentence;
+    </script>
+</body>
+</html>
