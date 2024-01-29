@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #button {
+        padding: 10px 20px;
+        margin-left: 50px;
+        font-size: 30px;
+        border: none;
+        border-radius: 10px;
+      }
+      .js-odd {
+        background-color: lawngreen;
+      }
+      .js-even {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main"></h1>
+    <button id="button" onclick="buttonPressed()"></button>
+    <script>
+      let noOfTimesClicked = localStorage.getItem("noOfTimesClicked") || 0;
+      function buttonPressed() {
+        noOfTimesClicked++;
+        localStorage.setItem(`noOfTimesClicked`, noOfTimesClicked);
+        updateButton();
+      }
+      function updateButton() {
+        let button = document.getElementById("button");
+        if (noOfTimesClicked % 2 === 0) {
+          button.classList.remove("js-odd");
+          button.classList.add("js-even");
+        } else {
+          button.classList.add("js-odd");
+          button.classList.remove("js-even");
+        }
+        button.innerText = noOfTimesClicked;
+      }
+      updateButton();
+
+      /* 
+      function isOdd(n) {
+               let rem=n%2;
+               let isOdd=rem==0;
+               return isOdd;
+              }
+              console.log(isOdd(22));*/
+
+      /*
+      function digit(m, n) {
+                if (m < n) {
+                  return n;
+                } else {
+                  return m;
+                }
+              }
+              console.log(digit(500, 60));*/
+      //------------------------------------------
+      /*
+        let Product = {
+                size: "M",
+                price: "1200",
+                colour: "green",
+              };
+
+              localStorage.setItem("Name", "kg");
+              console.log(localStorage.getItem("Name"));
+              localStorage.setItem("Product", JSON.stringify(Product));
+              console.log(localStorage.getItem("Product"));*/
+
+      //---------------------------
+
+      //--------------////-------------
+      /*
+
+       /*function doGreeting(personName) {
+        var text = document.getElementById("main");
+        let myDate = new Date();
+       let hr = myDate.getHours();
+       // let hr= 21;
+        if (hr > 5 && hr < 12) {
+          text.innerText = `Good Morning  ${personName}`;
+        } else if (hr > 12 && hr < 18) {
+          text.innerText = `Good Afternoon ${personName}`;
+        } else {
+          text.innerText = `good night ${personName}`;
+        }
+      }
+      doGreeting("EveryOne !!");*/
+    </script>
+  </body>
+</html>

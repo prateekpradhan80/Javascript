@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/9424474596.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 20%;
+      }
+      .tablink:hover {
+        background-color: #777;
+      }
+      .tabcontent {
+        color: aliceblue;
+        padding: 100px 20px;
+        height: 100%;
+      }
+      button a {
+        font-size: 30px;
+        color: aliceblue;
+      }
+
+      #Home {
+        background-color: red;
+      }
+      #Search {
+        background-color: blue;
+      }
+      #Inbox {
+        background-color: orange;
+      }
+      #Web {
+        background-color: pink;
+      }
+      #Delete {
+        background-color: rgb(210, 40, 51);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="tablink" onclick="openPage('Home',this ,'red')">
+      <a href="#" class="active"><i class="fa-solid fa-house"></i></a>
+    </button>
+
+    <button class="tablink" onclick="openPage('Search',this,'blue')">
+      <a href="#"><i class="fa fa-search"></i></a>
+    </button>
+    <button class="tablink" onclick="openPage('Inbox',this,'orange')">
+      <a href="#"><i class="fa fa-envelope"></i></a>
+    </button>
+    <button class="tablink" onclick="openPage('Web',this,'pink')">
+      <a href="#"><i class="fa fa-globe"></i></a>
+    </button>
+    <button class="tablink" onclick="openPage('Delete',this,'red')">
+      <a href="#"><i class="fa fa-trash"></i></a>
+    </button>
+
+    <div id="Home" class="tabcontent">
+      <h3>Home</h3>
+      <p>Home is where the heart is...</p>
+    </div>
+
+    <div id="Search" class="tabcontent">
+      <h3>Searching......</h3>
+    </div>
+
+    <div id="Inbox" id="defaultOpen" class="tabcontent">
+      <h3>inbox</h3>
+      <p>welcome to your inbox...</p>
+    </div>
+
+    <div id="Web" class="tabcontent">
+      <h3>Websites</h3>
+      <p>wensites where you will get everything</p>
+    </div>
+
+    <div id="Delete" class="tabcontent">
+      <h3>Delete</h3>
+      <p>You can erase everything</p>
+    </div>
+
+    <script>
+      function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>
