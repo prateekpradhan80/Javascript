@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .button {
+        border: none;
+        border-radius: 5px;
+        background-color: red;
+        color: white;
+        height: 40px;
+        cursor: pointer;
+      }
+      .button-double {
+        border: none;
+        border-radius: 5px;
+        background-color: red;
+        color: white;
+        font-size: 25px;
+        height: 70px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button" onclick=" ">Good Morning</button>
+    <script>
+      //   let btn = document.querySelector(".button");
+      //   btn.addEventListener("click", (e) => {
+      //     setTimeout(bigger, 2000);
+      //   });
+      //   function bigger() {
+      //     btn.classList.add("button-double");
+      //   }
+      // ------------------------------------------------------
+
+      // let multiply = (num1, num2) => {
+      //   return num1 * num2;
+      // };
+      // console.log(multiply(20, 50));
+
+      //-----------------------------------------------------------
+      // let printGreeting = () => console.log("hello everyone !!");
+      // function runTwice(inputFunction) {
+      //   inputFunction();
+      //   inputFunction();
+      // }
+      // let runTwice = (inputFunction) => {
+      //   inputFunction();
+      //   inputFunction();
+      // };
+      // runTwice(printGreeting);
+
+      //----------------------------------------
+
+      // let arr = [2, 3, 4, 5, 6, 7, 8, 9];
+      // let sum = 0;
+      // arr.forEach((num) => (sum += num));
+      // console.log(sum);
+
+      // let x = arr.reduce((acc, cum) => {
+      //   return (acc += cum);
+      // });
+      // console.log(x);
+      //------------------------------------------
+
+      let arr = [1, 2, 3, 4, 5, 6];
+      let square = arr.map((x) => {
+        return x * x;
+      });
+      console.log(square);
+    </script>
+  </body>
+</html>
